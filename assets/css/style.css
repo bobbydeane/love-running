@@ -53,25 +53,13 @@ h1, h2 {
     border-bottom: 1px solid #3a3a3a;
 }
 
-
-/* Hero Image */
-
-#hero-image {
-    height: 600px;
-    width: 100%;
-    background: url('../images/hero-image.webp') no-repeat center center;
-
-    /* animates zoom effect on the loading page */
-    animation-name: hero-zoom;
-    animation-duration: 5s;
-    animation-fill-mode: forwards;
+.active {
+    border-bottom: 1px solid #3a3a3a;
 }
 
-#cover-text, #cover-text h2 {
-    color: #fff;
-}
+/* hero image and cover text */
 
-#hero-outer{
+#hero-outer {
     height: 600px;
     width: 100%;
     overflow: hidden;
@@ -79,8 +67,22 @@ h1, h2 {
     position: relative;
 }
 
-/* Creates a level of zoom for the Hero Image */
+#cover-text, #cover-text h2 {
+    color: #fff;
+}
 
+#hero-image {
+    height: 600px;
+    width: 100%;
+    background: url('../images/hero-image.webp') no-repeat center center;
+
+    /* animates zoom effect on loading page */
+    animation-name: hero-zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+/* creates the level of zoom for hero image */
 @keyframes hero-zoom {
     from{
         transform: scale(1);
@@ -90,7 +92,27 @@ h1, h2 {
     }
 }
 
-/* Club Ethos */
+#cover-text {
+    font-size: 130%;
+    font-family: Oswald, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+    width: 300px;
+    height: 200px;
+
+    padding-top: 40px;
+    padding-left: 10px;
+
+    background-color: rgba(241, 109, 107, .7);
+
+    bottom: 30px;
+    right: 150px;
+
+    position: absolute;
+}
+
+/* club ethos */
 
 #club-ethos {
     height: 600px;
@@ -161,7 +183,7 @@ hr {
 }
 
 #circle-cover-bg {
-    background: url(../images/ethos-center-image.jpg);
+    background: url('../images/ethos-center-image.jpg') no-repeat center center;
     height: 100%;
     border-radius: 50%;
 }
@@ -169,7 +191,7 @@ hr {
 /* event times */
 
 #times {
-    background-image: url('../images/dublin-city.webp');
+    background-image: url('../images/times-background.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -192,6 +214,8 @@ hr {
 #times h2 {
     color: #fafafa;
 }
+
+/* footer */
 
 footer {
     height: 150px;
@@ -223,4 +247,37 @@ footer {
 
 #photos > img {
     width: 100%;
+}
+
+/* Media queries */
+
+/* For larger to medium screens size from 1200px wide and down */
+@media screen and (max-width: 1200px) {
+    #club-ethos {
+        width: 65%;
+        height: 1200px;
+        margin: 0 auto;
+    }
+
+    #welcome {
+        padding: 30px 0;
+        margin: 0;
+    }
+
+    #left-about, #right-about {
+        width: 100%;
+        float: left;
+        padding: 0;
+    }
+
+    #center-about {
+        clear: both;
+        width: 100%;
+        float: left;
+        padding: 0;
+    }
+
+    hr {
+        display: none;
+    }
 }
